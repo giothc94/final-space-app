@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="spinnerFlag" name="dots"></ion-spinner>
+  <ion-grid *ngIf="!spinnerFlag">
+    <ion-row>
+      <ion-col size="6" *ngFor="let c of characters">
+        <ion-card (click)="goToCharacter(c.id)">
+          <img [src]="c.img_url" />
+          <ion-card-header>
+            <ion-card-subtitle>{{c.name}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

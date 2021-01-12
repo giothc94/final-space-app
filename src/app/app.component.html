@@ -1,3 +1,18 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Final Space</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item (click)="goToPage('characters')">Characters</ion-item>
+        <ion-item (click)="goToPage('locations')">Locations</ion-item>
+        <ion-item (click)="goToPage('episodes')">Episodes</ion-item>
+        <ion-item (click)="goToPage('quotes')">Quotes</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

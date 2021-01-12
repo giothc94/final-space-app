@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>episodes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="spinnerFlag" name="dots"></ion-spinner>
+  <div *ngIf="!spinnerFlag">
+    <ion-card *ngFor="let e of episodes" (click)="goToEpisode(e.id)">
+      <img [src]="e.img_url" />
+      <ion-card-header>
+        <ion-card-title>{{e.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>
+          <p><b>Director: </b>{{e.director}}</p>
+          <p><b>Writer: </b>{{e.writer}}</p>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{episode?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="episode.img_url" />
+    <ion-card-content>
+      <ion-label>
+        <p><b>Director: </b>{{episode.director}}</p>
+        <p><b>Writer: </b>{{episode.writer}}</p>
+        <p><b>Air date: </b>{{episode.air_date}}</p>
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let c of episode.characters">
+        <ion-card (click)="goToCharacter(c.id)">
+          <img [src]="c.img_url" />
+          <ion-card-header>
+            <ion-card-subtitle>{{c.name}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

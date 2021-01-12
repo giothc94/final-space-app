@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>quotes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let q of quotes">
+    <img [src]="q.image" />
+    <ion-card-header>
+      <ion-card-title>{{q.quote}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>
+        <p> <b>By: </b> {{q.by}}</p>
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

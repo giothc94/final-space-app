@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{character?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="character.img_url" />
+    <ion-card-header>
+      <ion-card-subtitle>{{character.species}}</ion-card-subtitle>
+      <ion-card-title>{{character.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{character.status}} / {{character.gender}}</p>
+      <p> <b>Origin:</b> {{character.origin}}</p>
+      <p> <b>Hair:</b> {{character.hair}}</p>
+      <ion-label>
+        <div *ngIf="character.alias?.length > 0">
+          <b>Alias</b>
+          <li *ngFor="let a of character.alias">{{ a }}</li>
+        </div>
+        <div *ngIf="character.abilities?.length > 0">
+          <b>Abilities</b>
+          <li *ngFor="let a of character.abilities">{{ a }}</li>
+        </div>
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
